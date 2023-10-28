@@ -1,8 +1,9 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { Component } from "../Abstract/Component";
+import { TServices } from "../Abstract/Type";
 
 export class Router {
-  constructor(public links: Record<string, Component>) {
+  constructor(public links: Record<string, Component>, private services: TServices) {
     this.openPage();
 
     window.onhashchange = () => {
@@ -20,21 +21,11 @@ export class Router {
 
     if ((url === 'account' || url === 'basket') && !user) {
       const wind = window.confirm("Для доступа на эту страницу нужно зарегистрироваться\nВойти в аккаунт?");
-      if (wind) { this.authWidthGoogle() } else { this.links['#'].render(); }
+      if (wind) { this.services.authService.authWidthGoogle() } else { this.links['#'].render(); }
 
     } else {
       this.links['#' + url].render();
     }
   }
-  authWidthGoogle(): void {
-    const auth = getAuth();
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-      .then(() => {
-        window.location.reload();
-      })
-      .catch(() => {
-        console.log('bad');
-      });
-  }
+
 }

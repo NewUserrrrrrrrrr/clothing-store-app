@@ -1,9 +1,10 @@
 import { Component } from "../Abstract/Component";
+import { TServices } from "../Abstract/Type";
 
 
 
 export class MainPage extends Component {
-  constructor(parrent: HTMLElement) {
+  constructor(parrent: HTMLElement, private services: TServices) {
     super(parrent, "div", ["main__page"]);
     const mainpage = new Component(this.root, 'div', ['mainpage__inner']);
     new Component(mainpage.root, 'img', ["mainpage__img"], null, ["src", "alt"], ["./assets/Photo.png", "main page photo"]);

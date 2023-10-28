@@ -1,9 +1,10 @@
 import { Component } from "../Abstract/Component";
+import { TServices } from "../Abstract/Type";
 
 
 
 export class Header extends Component {
-  constructor(parrent: HTMLElement) {
+  constructor(parrent: HTMLElement, private services: TServices) {
     super(parrent, "header", ["header"]);
     const logotip = new Component(this.root, 'a', ["header__logo"], null, ["href"], ["#"]);
     new Component(logotip.root, 'img', null, null, ["src", "alt"], ["./assets/favicon.jpg", "logotip"]);
