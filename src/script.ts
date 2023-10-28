@@ -8,11 +8,15 @@ import { Catalog } from './Pages/Catalog';
 import { Account } from './Pages/Account';
 import { MainPage } from './Pages/MainPage';
 import './style.scss';
+import { Authorization } from './Pages/Authorization';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../configFB';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 
 const body = document.body;
 
-
+initializeApp(firebaseConfig);
 
 class App {
   constructor(parrent: HTMLElement) {
@@ -29,6 +33,7 @@ class App {
 
     new Router(links);
     new Footer(wrap.root);
+    new Authorization(wrap.root);
   }
 }
 
@@ -37,5 +42,9 @@ declare global {
     app: App;
   }
 }
-window.app = new App(document.body);
+
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (!window.app) window.app = new App(document.body);
+})
 
