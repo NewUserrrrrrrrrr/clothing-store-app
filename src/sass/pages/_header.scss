@@ -1,0 +1,12 @@
+.header {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.10) 81.25%, rgba(0, 0, 0, 0.00) 100%);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.header__icons {
+  display: flex;
+  gap: 20px;
+}

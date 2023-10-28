@@ -1,19 +1,28 @@
 
 import { Component } from './Abstract/Component';
+import { Footer } from './Common/Footer';
+import { Header } from './Common/Header';
+import { MainPage } from './Pages/MainPage';
 import './style.scss';
+
 
 const body = document.body;
 
-const btn1 = new Component(body, 'input', ["btnspace"], null, ["type", "value"], ["button", "Отобразить"]);
 
-const btn2 = new Component(body, 'input', ["btnspace"], null, ["type", "value"], ["button", "Удалить"]);
 
-const prg = new Component(body, 'p', null, 'My name is Anna');
-
-btn2.root.onclick = () => {
-  prg.remove();
+class App {
+  constructor(parrent: HTMLElement) {
+    const wrap = new Component(body, 'div', ["wrapper"]);
+    new Header(wrap.root);
+    new MainPage(wrap.root);
+    new Footer(wrap.root);
+  }
 }
 
-btn1.root.onclick = () => {
-  prg.render();
+declare global {
+  interface Window {
+    app: App;
+  }
 }
+window.app = new App(document.body);
+
