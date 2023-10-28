@@ -1,0 +1,23 @@
+{
+  "name": "clothing-store-app",
+  "description": "Интернет-магазин одежды",
+  "private": true,
+  "author": "em000320@g.bstu.by",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack serve --mode=development",
+    "deploy": "firebase deploy"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.2.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
