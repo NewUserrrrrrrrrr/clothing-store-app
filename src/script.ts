@@ -14,15 +14,20 @@ import { firebaseConfig } from '../configFB';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { LogicService } from './Services/LogicService';
 import { AuthService } from './Services/AuthService';
+import { getFirestore } from 'firebase/firestore';
+import { DBService } from './Services/DBService';
+import { Detail } from './Pages/Detail';
 
 
 const body = document.body;
 
-initializeApp(firebaseConfig);
+const DBFirestore = initializeApp(firebaseConfig);
+const db = getFirestore(DBFirestore);
 
 const services = {
   authService: new AuthService(),
-  logicService: new LogicService()
+  logicService: new LogicService(),
+  dbService: new DBService(DBFirestore)
 };
 
 class App {
@@ -35,7 +40,9 @@ class App {
       "#": new MainPage(main.root, services),
       "#catalog": new Catalog(main.root, services),
       "#basket": new Basket(main.root, services),
-      "#account": new Account(main.root, services)
+      "#account": new Account(main.root, services),
+      "#authorization": new Authorization(main.root, services),
+      "#detail": new Detail(main.root, services)
     };
 
     new Router(links, services);
@@ -53,6 +60,13 @@ declare global {
 const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   services.authService.user = user;
-  if (!window.app) window.app = new App(document.body);
+  services.dbService
+    .getDataUser(user)
+    .then(() => {
+      if (!window.app) window.app = new App(document.body);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
 })
 

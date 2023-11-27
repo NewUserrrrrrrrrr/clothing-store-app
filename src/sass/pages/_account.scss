@@ -1,0 +1,65 @@
+.account__user {
+  border: 2px solid black;
+  margin: 30px;
+  padding: 30px 80px;
+}
+
+.accoun__username {
+  text-align: center;
+  font-family: Tinos;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 58.594px;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+
+.account__user-email {
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.account-email,
+.stat__name {
+  text-align: center;
+  font-family: Tinos;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 58.594px;
+}
+
+.stat__data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat__graph {
+  padding: 10px;
+}
+
+.account__title {
+  margin-bottom: 15px;
+}
+
+.account__admin-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  background: rgba(0, 0, 0, 0.17);
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  gap: 10px;
+  padding: 10px;
+  width: 350px;
+  margin: auto;
+}

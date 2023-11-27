@@ -1,0 +1,28 @@
+.detail,
+.detail__cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail__cart {
+  margin-top: 30px;
+  border: 2px solid black;
+  padding: 30px;
+  gap: 20px;
+  width: 500px;
+}
+
+.detail__name {
+  text-align: center;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.detail__text {
+  text-align: center;
+  width: 300px;
+}

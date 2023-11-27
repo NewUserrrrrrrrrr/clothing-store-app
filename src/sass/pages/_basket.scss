@@ -1,0 +1,87 @@
+//basket
+.basket {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.basket__goods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.total__basket-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 10px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.basket__oplata {
+  background: #085644BA;
+  color: white;
+  width: 310px;
+  height: 40px;
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+.nullbasket {
+  margin: 50px;
+}
+
+
+
+
+
+
+
+
+//cardbasket
+.cardbasket {
+  display: flex;
+  border: 2px solid black;
+  width: 335px;
+  height: 115px;
+  padding: 15px;
+  gap: 5px;
+  margin: 10px;
+}
+
+.cardbasket__textcard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 230px;
+}
+
+.cardbasket__btn {
+  background: transparent;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.cardbasket__countcard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardbasket__costcard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartbasket__del {
+  background: url("../../assets/Icons/delete.svg");
+  width: 15px;
+  height: 15px;
+}

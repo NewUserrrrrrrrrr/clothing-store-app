@@ -3,8 +3,8 @@
     //Type Checking
     "strict": true,
     //Modules
-    "module": "NodeNext",
-    "moduleResolution": "nodenext",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
     //Emit
     "downlevelIteration": true,
     "outDir": "./dest/",
