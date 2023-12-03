@@ -58,3 +58,9 @@ export type TDataGraph = {
   x: Date,
   y: number,
 }
+
+export type TCounter = {
+  dresses: number,
+  jackets: number,
+  pants: number
+}
